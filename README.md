@@ -1,3 +1,15 @@
+MinecraftServerPing-CSharp
+===================
+A CSharp Minecraft server "pinger" (MOTD ping) API.
+
+Forked from [jamietech/MinecraftServerPing](https://github.com/jamietech/MinecraftServerPing).
+
+Just translate into CSharp.
+
+Status: No change
+
+The following is the original article from [jamietech/MinecraftServerPing](https://github.com/jamietech/MinecraftServerPing).
+
 MinecraftServerPing
 ===================
 
