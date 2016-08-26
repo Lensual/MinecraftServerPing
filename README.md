@@ -6,8 +6,8 @@ Forked from [jamietech/MinecraftServerPing](https://github.com/jamietech/Minecra
 
 Just translate into CSharp.
 
-Status: No change
-
+Status: Translated(99%), Debugging
+ 
 The following is the original article from [jamietech/MinecraftServerPing](https://github.com/jamietech/MinecraftServerPing).
 
 MinecraftServerPing
