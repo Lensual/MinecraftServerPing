@@ -38,6 +38,7 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace MinecraftServerPing_CSharp
 {
@@ -73,8 +74,7 @@ namespace MinecraftServerPing_CSharp
             Stream stream = client.GetStream();
 
             //> Handshake
-            MemoryStream handshake_bytes = new MemoryStream();
-            MemoryStream handshake = new MemoryStream(handshake_bytes.GetBuffer());
+            MemoryStream handshake = new MemoryStream();
 
             handshake.WriteByte(MinecraftPingUtil.PACKET_HANDSHAKE);
             MinecraftPingUtil.writeVarInt(handshake, MinecraftPingUtil.PROTOCOL_VERSION);
@@ -83,8 +83,8 @@ namespace MinecraftServerPing_CSharp
             handshake.Write(System.BitConverter.GetBytes((short)options.getPort()), 0, 2);
             MinecraftPingUtil.writeVarInt(handshake, MinecraftPingUtil.STATUS_HANDSHAKE);
 
-            MinecraftPingUtil.writeVarInt(stream, (int)handshake_bytes.Length);
-            byte[] b = handshake_bytes.ToArray();
+            MinecraftPingUtil.writeVarInt(stream, (int)handshake.Length);
+            byte[] b = handshake.ToArray();
             stream.Write(b, 0, b.Length);
 
             //> Status request
@@ -125,11 +125,14 @@ namespace MinecraftServerPing_CSharp
             // Close
 
             handshake.Close();
-            handshake_bytes.Close();
             stream.Close();
             client.Close();
 
-            return new Gson().fromJson(json, MinecraftPingReply.class);
+            //声明定义 内存流 和 Serializer
+            MemoryStream MemStream = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(MinecraftPingReply));
+            //反序列化内存流 并返回
+            return (MinecraftPingReply)ser.ReadObject(MemStream);
         }
     }
 

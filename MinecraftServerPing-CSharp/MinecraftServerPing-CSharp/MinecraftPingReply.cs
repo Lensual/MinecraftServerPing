@@ -46,19 +46,19 @@ namespace MinecraftServerPing_CSharp
     public class MinecraftPingReply
     {
 
-        private Description description;
-        private Players players;
-        private Version version;
-        private String favicon;
+        public string description;
+        public Players players;
+        public Version version;
+        public String favicon;
 
         /// <summary>
         /// return the MOTD
         /// </summary>
         /// <returns></returns>
-        public Description getDescription()
-        {
-            return this.description;
-        }
+        //public Description getDescription()
+        //{
+        //    return this.description;
+        //}
 
         /// <summary>
         /// return Players
@@ -89,7 +89,7 @@ namespace MinecraftServerPing_CSharp
 
         public class Description
         {
-            private String text;
+            public String text;
 
             /// <summary>
             /// return Server description text
@@ -103,9 +103,9 @@ namespace MinecraftServerPing_CSharp
 
         public class Players
         {
-            private int max;
-            private int online;
-            private List<Player> sample;
+            public int max;
+            public int online;
+            public List<Player> sample;
 
             /// <summary>
             /// return Maximum player count
@@ -137,8 +137,8 @@ namespace MinecraftServerPing_CSharp
 
         public class Player
         {
-            private String name;
-            private String id;
+            public String name;
+            public String id;
 
             /// <summary>
             /// return Name of player
@@ -162,8 +162,8 @@ namespace MinecraftServerPing_CSharp
 
         public class Version
         {
-            private String name;
-            private int protocol;
+            public String name;
+            public int protocol;
 
             /// <summary>
             /// return Version name (ex: 13w41a)

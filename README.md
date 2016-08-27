@@ -6,7 +6,9 @@ Forked from [jamietech/MinecraftServerPing](https://github.com/jamietech/Minecra
 
 Just translate into CSharp.
 
-Status: Translated(99%), Debugging
+(Somewhere have to be changed)
+
+Status: Debugging(70%)
  
 The following is the original article from [jamietech/MinecraftServerPing](https://github.com/jamietech/MinecraftServerPing).
 
