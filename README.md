@@ -8,9 +8,41 @@ Just translate into CSharp.
 
 (Somewhere have to be changed)
 
-Status: Debugging(70%)
- 
-The following is the original article from [jamietech/MinecraftServerPing](https://github.com/jamietech/MinecraftServerPing).
+Status: beta
+
+###Example
+
+* Example is already in project.
+
+###Details
+
+* 已测试纯净1.7.10 KCauldron可用
+* 在测试一些使用了 MOTD 插件的服务器可能有BUG（尚未修复）
+* 不需要 Gson 改用 `System.Runtime.Serialization.Json`
+* 去掉了所有默认抛出的异常 `throws IOException`
+
+####MinecraftPing.cs
+
+* `Socket` 改用 `TcpClient`
+* 数据流对象 `in` 和 `out` 合并改为 `stream`
+* 简化删除了对象 `handshake_bytes`
+
+
+####MinecraftPingUtil.cs
+
+* `validate` 函数 抛出的异常 `RuntimeException(m)` 改为 `Exception(m)`
+
+####MinecraftPingReply.cs
+
+* 所有声明为 `private` 对象改为 `public`
+
+####MinecraftPingOptions.cs
+
+* PERFECT!! 
+
+###The following is the original article from [jamietech/MinecraftServerPing](https://github.com/jamietech/MinecraftServerPing).
+
+---
 
 MinecraftServerPing
 ===================

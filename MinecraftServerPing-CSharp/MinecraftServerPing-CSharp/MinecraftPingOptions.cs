@@ -33,13 +33,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace MinecraftServerPing_CSharp
 {
-    /**
+/**
  * Storage class for {@link MinecraftPing} options.
  */
     public class MinecraftPingOptions

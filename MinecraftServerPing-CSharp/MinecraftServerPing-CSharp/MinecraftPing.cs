@@ -33,8 +33,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.IO;
@@ -128,9 +126,12 @@ namespace MinecraftServerPing_CSharp
             stream.Close();
             client.Close();
 
+            Console.WriteLine(json);
+
             //声明定义 内存流 和 Serializer
             MemoryStream MemStream = new MemoryStream(Encoding.UTF8.GetBytes(json));
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(MinecraftPingReply));
+
             //反序列化内存流 并返回
             return (MinecraftPingReply)ser.ReadObject(MemStream);
         }

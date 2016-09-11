@@ -33,10 +33,7 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace MinecraftServerPing_CSharp
 {
@@ -66,6 +63,7 @@ namespace MinecraftServerPing_CSharp
 
         /**
          * @author thinkofdeath
+         * Translation by Lensual
          * See: https://gist.github.com/thinkofdeath/e975ddee04e9c87faf22
          */
         public static int readVarInt(Stream stream)
@@ -90,6 +88,7 @@ namespace MinecraftServerPing_CSharp
 
         /**
          * @author thinkofdeath
+         * Translation by Lensual
          * See: https://gist.github.com/thinkofdeath/e975ddee04e9c87faf22
          * @throws IOException 
          */
